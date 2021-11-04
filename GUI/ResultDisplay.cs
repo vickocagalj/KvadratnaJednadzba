@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KvadratnaJednadzba;
 
 namespace Vsite.CSharp.KvadratnaJednadžba.GUI
 {
@@ -15,6 +16,20 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
         public ResultDisplay()
         {
             InitializeComponent();
+        }
+
+        public readonly QuadraticEquation qE = new QuadraticEquation();
+
+        public void FillResults()
+        {
+            qE.A = (double) numericUpDowna.Value;
+            qE.B = (double) numericUpDownb.Value;
+            qE.C = (double) numericUpDownc.Value;
+
+            double discriminant = qE.Discriminant;
+            Discriminant.Text = discriminant.ToString();
+            Roots1.Text = qE.Roots[0].ToString();
+            Roots2.Text = qE.Roots[1].ToString();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -29,7 +44,17 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
 
         private void label4_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+           FillResults();
+        }
+
+        private void numericUpDowna_ValueChanged(object sender, EventArgs e)
+        {
+            FillResults();
         }
     }
 }

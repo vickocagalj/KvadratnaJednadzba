@@ -30,7 +30,7 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.a = new System.Windows.Forms.Label();
             this.numericUpDowna = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownb = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,14 +38,15 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Discriminant = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxRoots = new System.Windows.Forms.GroupBox();
+            this.Roots1 = new System.Windows.Forms.TextBox();
+            this.Roots2 = new System.Windows.Forms.TextBox();
+            this.buttonEvaluate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDowna)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownc)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.textBoxRoots.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -55,7 +56,7 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
             this.groupBox1.Controls.Add(this.numericUpDownb);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.numericUpDowna);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.a);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 122);
@@ -64,16 +65,16 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
             this.groupBox1.Text = "Coefficients";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // a
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(16, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "&a:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.a.AutoSize = true;
+            this.a.BackColor = System.Drawing.SystemColors.Control;
+            this.a.Location = new System.Drawing.Point(16, 31);
+            this.a.Name = "a";
+            this.a.Size = new System.Drawing.Size(20, 17);
+            this.a.TabIndex = 0;
+            this.a.Text = "&a:";
+            this.a.Click += new System.EventHandler(this.label1_Click);
             // 
             // numericUpDowna
             // 
@@ -93,6 +94,7 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
             this.numericUpDowna.Size = new System.Drawing.Size(120, 22);
             this.numericUpDowna.TabIndex = 1;
             this.numericUpDowna.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDowna.ValueChanged += new System.EventHandler(this.numericUpDowna_ValueChanged);
             // 
             // numericUpDownb
             // 
@@ -112,6 +114,7 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
             this.numericUpDownb.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownb.TabIndex = 3;
             this.numericUpDownb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDownb.ValueChanged += new System.EventHandler(this.numericUpDowna_ValueChanged);
             // 
             // label2
             // 
@@ -141,6 +144,7 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
             this.numericUpDownc.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownc.TabIndex = 5;
             this.numericUpDownc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDownc.ValueChanged += new System.EventHandler(this.numericUpDowna_ValueChanged);
             // 
             // label3
             // 
@@ -170,50 +174,61 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
             this.Discriminant.Size = new System.Drawing.Size(125, 22);
             this.Discriminant.TabIndex = 2;
             // 
-            // groupBox2
+            // textBoxRoots
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Location = new System.Drawing.Point(21, 250);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Roots";
+            this.textBoxRoots.Controls.Add(this.Roots2);
+            this.textBoxRoots.Controls.Add(this.Roots1);
+            this.textBoxRoots.Location = new System.Drawing.Point(21, 250);
+            this.textBoxRoots.Name = "textBoxRoots";
+            this.textBoxRoots.Size = new System.Drawing.Size(200, 100);
+            this.textBoxRoots.TabIndex = 3;
+            this.textBoxRoots.TabStop = false;
+            this.textBoxRoots.Text = "Roots";
             // 
-            // textBox1
+            // Roots1
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(125, 22);
-            this.textBox1.TabIndex = 3;
+            this.Roots1.Location = new System.Drawing.Point(9, 21);
+            this.Roots1.Name = "Roots1";
+            this.Roots1.ReadOnly = true;
+            this.Roots1.Size = new System.Drawing.Size(182, 22);
+            this.Roots1.TabIndex = 3;
             // 
-            // textBox2
+            // Roots2
             // 
-            this.textBox2.Location = new System.Drawing.Point(9, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(125, 22);
-            this.textBox2.TabIndex = 4;
+            this.Roots2.Location = new System.Drawing.Point(9, 49);
+            this.Roots2.Name = "Roots2";
+            this.Roots2.ReadOnly = true;
+            this.Roots2.Size = new System.Drawing.Size(182, 22);
+            this.Roots2.TabIndex = 4;
+            // 
+            // buttonEvaluate
+            // 
+            this.buttonEvaluate.Location = new System.Drawing.Point(253, 197);
+            this.buttonEvaluate.Name = "buttonEvaluate";
+            this.buttonEvaluate.Size = new System.Drawing.Size(88, 23);
+            this.buttonEvaluate.TabIndex = 4;
+            this.buttonEvaluate.Text = "&Evaluate";
+            this.buttonEvaluate.UseVisualStyleBackColor = true;
+            this.buttonEvaluate.Click += new System.EventHandler(this.button1_Click);
             // 
             // ResultDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.buttonEvaluate);
+            this.Controls.Add(this.textBoxRoots);
             this.Controls.Add(this.Discriminant);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Name = "ResultDisplay";
-            this.Size = new System.Drawing.Size(250, 360);
+            this.Size = new System.Drawing.Size(603, 360);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDowna)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownc)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.textBoxRoots.ResumeLayout(false);
+            this.textBoxRoots.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +237,7 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label a;
         private System.Windows.Forms.NumericUpDown numericUpDowna;
         private System.Windows.Forms.NumericUpDown numericUpDownc;
         private System.Windows.Forms.Label label3;
@@ -230,8 +245,9 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Discriminant;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox textBoxRoots;
+        private System.Windows.Forms.TextBox Roots2;
+        private System.Windows.Forms.TextBox Roots1;
+        private System.Windows.Forms.Button buttonEvaluate;
     }
 }
