@@ -48,16 +48,16 @@ namespace KvadratnaJednadzba
             get { return b * b - 4 * a * c; }
         }
 
-        public double[] Roots
+        public Complex.Complex[] Roots
         {
             get
             {
                 if (a == 0)
                 {
-                    return new double[] {-c / b, -c / b};
+                    return new Complex.Complex[] {-c / b, -c / b};
                 }
                 double sqrtDisc = Math.Sqrt(Discriminant);
-                double[] result = new double[] { (-b - sqrtDisc)/ 2 / a, (-b + sqrtDisc) / 2 / a};
+                Complex.Complex[] result = new Complex.Complex[] { (-b - sqrtDisc)/ 2 / a, (-b + sqrtDisc) / 2 / a};
                 return result;
             }
         }
