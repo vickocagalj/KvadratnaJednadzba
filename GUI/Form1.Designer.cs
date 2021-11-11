@@ -29,10 +29,20 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.resultDisplay1 = new Vsite.CSharp.KvadratnaJednadžba.GUI.ResultDisplay();
             this.functionPanel1 = new Vsite.CSharp.KvadratnaJednadžba.GUI.FunctionPanel();
+            this.resultDisplay1 = new Vsite.CSharp.KvadratnaJednadžba.GUI.ResultDisplay();
             ((System.ComponentModel.ISupportInitialize)(this.functionPanel1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // functionPanel1
+            // 
+            this.functionPanel1.BackColor = System.Drawing.SystemColors.Window;
+            this.functionPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.functionPanel1.Location = new System.Drawing.Point(263, 12);
+            this.functionPanel1.Name = "functionPanel1";
+            this.functionPanel1.Size = new System.Drawing.Size(418, 364);
+            this.functionPanel1.TabIndex = 1;
+            this.functionPanel1.TabStop = false;
             // 
             // resultDisplay1
             // 
@@ -40,14 +50,6 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
             this.resultDisplay1.Name = "resultDisplay1";
             this.resultDisplay1.Size = new System.Drawing.Size(363, 360);
             this.resultDisplay1.TabIndex = 0;
-            // 
-            // functionPanel1
-            // 
-            this.functionPanel1.Location = new System.Drawing.Point(338, 12);
-            this.functionPanel1.Name = "functionPanel1";
-            this.functionPanel1.Size = new System.Drawing.Size(355, 364);
-            this.functionPanel1.TabIndex = 1;
-            this.functionPanel1.TabStop = false;
             // 
             // Form1
             // 

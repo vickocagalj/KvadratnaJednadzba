@@ -47,12 +47,7 @@ namespace Vsite.CSharp.KvadratnaJednadžba.GUI
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           FillResults();
-        }
-
-        private void numericUpDowna_ValueChanged(object sender, EventArgs e)
+        private void numericUpDown_ValueChanged(object sender, EventArgs e)
         {
             FillResults();
         }
